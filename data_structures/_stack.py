@@ -1,3 +1,10 @@
+from ._exception import DataStructureException
+
+
+class StackError(DataStructureException):
+    pass
+
+
 class StackNode:
     def __init__(self, data):
         self.data = data
@@ -9,6 +16,9 @@ class Stack:
         self.head = None
 
     def pop(self):
+        if self.head is None:
+            raise StackError("EmptyStack")
+
         data = self.head.data
         self.head = self.head.next
         return data

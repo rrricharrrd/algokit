@@ -1,3 +1,10 @@
+from ._exception import DataStructureException
+
+
+class HeapError(DataStructureException):
+    pass
+
+
 class Heap:
     def __init__(self):
         self.nodes = []

@@ -1,3 +1,10 @@
+from ._exception import DataStructureException
+
+
+class TreeError(DataStructureException):
+    pass
+
+
 class TreeNode:
     def __init__(self, data):
         self.data = data

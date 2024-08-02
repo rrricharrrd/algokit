@@ -1,3 +1,10 @@
+from ._exception import DataStructureException
+
+
+class LinkedListError(DataStructureException):
+    pass
+
+
 class ListNode:
     def __init__(self, data):
         self.data = data
@@ -19,6 +26,9 @@ class LinkedList:
             n.next = node
 
     def delete(self, data):
+        if self.head is None:
+            raise LinkedListError("Empty list")
+
         n = self.head
         if n.data == data:
             self.head = n.next

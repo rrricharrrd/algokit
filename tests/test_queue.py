@@ -1,4 +1,6 @@
-from data_structures import Queue
+import pytest
+
+from data_structures import Queue, QueueError
 
 
 def test_empty():
@@ -7,8 +9,13 @@ def test_empty():
     print(queue)
 
 
-def test_queue():
+def test_errors():
+    queue = Queue()
+    with pytest.raises(QueueError):
+        queue.remove()
 
+
+def test_queue():
     queue = Queue()
     queue.add(1)
     queue.add(2)

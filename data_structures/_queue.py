@@ -1,3 +1,10 @@
+from ._exception import DataStructureException
+
+
+class QueueError(DataStructureException):
+    pass
+
+
 class QueueNode:
     def __init__(self, data):
         self.data = data
@@ -18,8 +25,11 @@ class Queue:
             self.head = node
 
     def remove(self):
+        if self.is_empty():
+            raise QueueError("Empty queue")
+
         data = self.head.data
-        self.head = self.head.next  # TODO null
+        self.head = self.head.next
         return data
 
     def peek(self):
