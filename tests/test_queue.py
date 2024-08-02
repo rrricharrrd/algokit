@@ -8,4 +8,4 @@ def test_queue():
     q.add(2)
     q.add(3)
     q.remove()
-    print(q.print())
+    print(q)

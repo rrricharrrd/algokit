@@ -33,7 +33,7 @@ class LinkedList:
         prev.next = n.next
         return
 
-    def print(self):
+    def __str__(self):
         str = ""
         n = self.head
         while n is not None:
@@ -41,4 +41,4 @@ class LinkedList:
                 str += "->"
             str += f"[{n.data}]"
             n = n.next
-        return str
+        return f"LinkedList<{str}>"

@@ -7,4 +7,4 @@ def test_stack():
     s.push(2)
     s.push(3)
     s.pop()
-    print(s.print())
+    print(s)

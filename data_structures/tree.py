@@ -14,3 +14,6 @@ class Tree:
 
     def find(self, data):
         pass
+
+    def __str__(self):
+        return "Tree<TODO>"

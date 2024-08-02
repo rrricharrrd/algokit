@@ -20,5 +20,5 @@ class Heap:
             current = parent
             parent = parent // 2
 
-    def print(self):
-        return self.nodes
+    def __str__(self):
+        return f"Heap<{self.nodes}>"

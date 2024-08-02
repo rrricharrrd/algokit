@@ -7,4 +7,4 @@ def test_list():
     lst.append(2)
     lst.append(3)
     lst.delete(2)
-    print(lst.print())
+    print(lst)

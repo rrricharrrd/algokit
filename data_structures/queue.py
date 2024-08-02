@@ -28,7 +28,7 @@ class Queue:
     def is_empty(self):
         return self.head is not None
 
-    def print(self):
+    def __str__(self):
         str = ""
         n = self.head
         while n is not None:
@@ -36,4 +36,4 @@ class Queue:
                 str += "->"
             str += f"[{n.data}]"
             n = n.next
-        return str
+        return f"Queue<{str}>"
