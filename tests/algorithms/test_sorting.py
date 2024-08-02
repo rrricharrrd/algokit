@@ -1,6 +1,6 @@
 import random
 
-from interviews.sorting.algorithms import heapsort
+from interviews.algorithms.sorting import heapsort
 
 RNG = random.Random(123)
 
