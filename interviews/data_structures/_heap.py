@@ -51,22 +51,31 @@ class Heap:
         self.items[0] = self.items[-1]
         self.items.pop(-1)
         current_ix = 0
-        while current_ix < len(self) // 2:
+        while current_ix < len(self):
             current = self.items[current_ix]
             left_ix = _left(current_ix)
-            left = self.items[left_ix]
             right_ix = _right(current_ix)
-            right = self.items[right_ix]
-            if left < current:
-                self.items[left_ix] = current
-                self.items[current_ix] = left
-                current_ix = left_ix
-            elif right < current:
-                self.items[right_ix] = current
-                self.items[current_ix] = right
-                current_ix = right_ix
+            min_child_ix = None
+            min_child = None
+            if left_ix < len(self.items):
+                left = self.items[left_ix]
+                min_child_ix = left_ix
+                min_child = left
+            if right_ix < len(self.items):
+                right = self.items[right_ix]
+                if right < left:
+                    min_child_ix = right_ix
+                    min_child = right
+
+            if min_child_ix is None:
+                break  # Have reached bottom
+            elif min_child < current:
+                self.items[min_child_ix] = current
+                self.items[current_ix] = min_child
+                current_ix = min_child_ix
             else:
-                break  # Current is less than both children
+                break  # Less than both children
+
         return result
 
     def insert(self, data):
@@ -81,3 +90,12 @@ class Heap:
                 done = True
             current_ix = parent_ix
             parent_ix = _parent(parent_ix)
+
+    def check(self):  # For testing...
+        for ix in range(len(self.items)):
+            left_ix = _left(ix)
+            right_ix = _right(ix)
+            if left_ix < len(self.items):
+                assert self.items[ix] <= self.items[left_ix]
+            if right_ix < len(self.items):
+                assert self.items[ix] <= self.items[right_ix]
