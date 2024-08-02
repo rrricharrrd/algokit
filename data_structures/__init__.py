@@ -1,8 +1,8 @@
-from .heap import Heap
-from .list import LinkedList
-from .queue import Queue
-from .stack import Stack
-from .tree import Tree
+from ._heap import Heap
+from ._list import LinkedList
+from ._queue import Queue
+from ._stack import Stack
+from ._tree import Tree
 
 __all__ = (
     "Heap",
