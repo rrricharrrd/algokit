@@ -17,14 +17,14 @@ class Queue:
         self.tail = None
 
     def __str__(self):
-        str = ""
+        s = ""
         n = self.head
         while n is not None:
-            if str:
-                str += "->"
-            str += f"[{n.data}]"
+            if s:
+                s += "->"
+            s += f"[{n.data}]"
             n = n.next
-        return f"Queue<{str}>"
+        return f"Queue<{s}>"
 
     def __len__(self):
         count = 0
