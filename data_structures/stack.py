@@ -1,4 +1,4 @@
-class Node:
+class StackNode:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -14,7 +14,7 @@ class Stack:
         return data
 
     def push(self, item):
-        node = Node(item)
+        node = StackNode(item)
         node.next = self.head
         self.head = node
 

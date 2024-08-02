@@ -1,4 +1,4 @@
-class Node:
+class QueueNode:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -10,7 +10,7 @@ class Queue:
         self.tail = None
 
     def add(self, item):
-        node = Node(item)
+        node = QueueNode(item)
         if self.tail is not None:
             self.tail.next = node
         self.tail = node

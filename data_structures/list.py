@@ -1,4 +1,4 @@
-class Node:
+class ListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -9,7 +9,7 @@ class LinkedList:
         self.head = None
 
     def append(self, data):
-        node = Node(data)
+        node = ListNode(data)
         n = self.head
         if n is None:
             self.head = node
