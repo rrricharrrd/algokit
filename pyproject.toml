@@ -1,18 +1,14 @@
 [project]
 name = "interviews"
 dynamic = ["version"]
-description = "Interview prep for data structures etc"
+description = "Interview prep for data structures and algorithms"
 readme = "README.md"
 # requires-python = ">=3.7"  # TODO
 license = {file = "LICENSE.txt"}
 authors = [{name = "Richard Harris"}]
 maintainers = [{name = "Richard Harris"}]
 
-dependencies = [
-]
-
-# [project.scripts]
-
+dependencies = []
 
 [build-system]
 requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
@@ -36,7 +32,6 @@ line_length = 120
 
 [tool.mypy]
 ignore_missing_imports = true
-# plugins = "numpy.typing.mypy_plugin"
 warn_unused_configs = true
 
 [pytest]
