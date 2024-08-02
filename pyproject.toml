@@ -1,0 +1,43 @@
+[project]
+name = "data-structures"
+dynamic = ["version"]
+description = "Interview prep for data structures"
+readme = "README.md"
+# requires-python = ">=3.7"  # TODO
+license = {file = "LICENSE.txt"}
+authors = [{name = "Richard Harris"}]
+maintainers = [{name = "Richard Harris"}]
+
+dependencies = [
+]
+
+#[project.scripts]
+
+
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["data_structures"]
+package-data = {}
+
+[tool.setuptools_scm]
+version_file = "data_structures/_version.py"
+
+# Linting
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+ignore_missing_imports = true
+plugins = "numpy.typing.mypy_plugin"
+warn_unused_configs = true
+
+[pytest]
+asyncio_mode = "auto"
