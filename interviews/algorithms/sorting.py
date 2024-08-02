@@ -10,4 +10,5 @@ def heapsort(items):
     while not heap.is_empty():
         minimum = heap.extract_min()
         result.append(minimum)
+
     return result

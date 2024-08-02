@@ -34,11 +34,14 @@ class Graph:
         self.nodes.add(node)
         return node
 
-    def add_edge(self, node1, node2):
+    def add_directed_edge(self, node1, node2):
         if node1 not in self.nodes:
             self.nodes.add(node1)
         if node2 not in self.nodes:
             self.nodes.add(node2)
 
         node1.adjacency.append(node2)
-        node2.adjacency.append(node1)
+
+    def add_edge(self, node1, node2):
+        self.add_directed_edge(node1, node2)
+        self.add_directed_edge(node2, node1)
