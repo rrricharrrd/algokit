@@ -42,13 +42,3 @@ class LinkedList:
             str += f"[{n.data}]"
             n = n.next
         return str
-
-
-if __name__ == "__main__":
-
-    lst = LinkedList()
-    lst.append(1)
-    lst.append(2)
-    lst.append(3)
-    lst.delete(2)
-    print(lst.print())

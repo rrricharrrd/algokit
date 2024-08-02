@@ -22,17 +22,3 @@ class Heap:
 
     def print(self):
         return self.nodes
-
-
-if __name__ == "__main__":
-
-    h = Heap()
-
-    h.insert(1)
-    h.print()
-
-    h.insert(3)
-    h.print()
-
-    h.insert(2)
-    h.print()

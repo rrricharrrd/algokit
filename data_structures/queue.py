@@ -37,13 +37,3 @@ class Queue:
             str += f"[{n.data}]"
             n = n.next
         return str
-
-
-if __name__ == "__main__":
-
-    q = Queue()
-    q.add(1)
-    q.add(2)
-    q.add(3)
-    q.remove()
-    print(q.print())
