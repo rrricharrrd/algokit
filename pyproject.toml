@@ -11,7 +11,7 @@ maintainers = [{name = "Richard Harris"}]
 dependencies = [
 ]
 
-#[project.scripts]
+# [project.scripts]
 
 
 [build-system]
@@ -36,7 +36,7 @@ line_length = 120
 
 [tool.mypy]
 ignore_missing_imports = true
-plugins = "numpy.typing.mypy_plugin"
+# plugins = "numpy.typing.mypy_plugin"
 warn_unused_configs = true
 
 [pytest]
