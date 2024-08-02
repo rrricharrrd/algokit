@@ -6,6 +6,7 @@ from data_structures import Heap, HeapError
 def test_empty():
     heap = Heap()
     assert heap.is_empty()
+    assert len(heap) == 0
     print(heap)
 
 
@@ -21,6 +22,7 @@ def test_heap():
     heap.insert(3)
     heap.insert(2)
     print(heap)
+    assert len(heap) == 3
 
 
 def test_heap_walk():

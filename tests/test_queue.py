@@ -6,6 +6,7 @@ from data_structures import Queue, QueueError
 def test_empty():
     queue = Queue()
     assert queue.is_empty()
+    assert len(queue) == 0
     print(queue)
 
 
@@ -23,4 +24,5 @@ def test_queue():
     queue.add(2)
     queue.add(3)
     queue.remove()
+    assert len(queue) == 2
     print(queue)

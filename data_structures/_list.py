@@ -25,6 +25,14 @@ class LinkedList:
             n = n.next
         return f"LinkedList<{str}>"
 
+    def __len__(self):
+        count = 0
+        node = self.head
+        while node is not None:
+            count += 1
+            node = node.next
+        return count
+
     def is_empty(self):
         return self.head is None
 
@@ -51,13 +59,19 @@ class LinkedList:
         n = self.head
         if n.data == data:
             self.head = n.next
-            return
+            return data
 
+        found = False
         prev = None
         while n is not None:
             if n.data == data:
+                found = True
                 break
-            n = n.next
             prev = n
-        prev.next = n.next
-        return
+            n = n.next
+
+        if found:
+            prev.next = n.next
+        else:
+            raise LinkedListError("Element could not be found")  # TODO
+        return data

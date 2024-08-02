@@ -26,6 +26,14 @@ class Queue:
             n = n.next
         return f"Queue<{str}>"
 
+    def __len__(self):
+        count = 0
+        node = self.head
+        while node is not None:
+            count += 1
+            node = node.next
+        return count
+
     def is_empty(self):
         return self.head is None
 

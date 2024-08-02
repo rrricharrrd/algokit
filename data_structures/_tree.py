@@ -19,6 +19,11 @@ class Tree:
     def __str__(self):
         return "Tree<TODO>"
 
+    def __len__(self):
+        count = 0
+        # TODO
+        return count
+
     def is_empty(self):
         return self.root is None
 

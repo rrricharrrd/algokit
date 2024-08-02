@@ -6,6 +6,7 @@ from data_structures import Tree, TreeError
 def test_empty():
     tree = Tree()
     assert tree.is_empty()
+    assert len(tree) == 0
     print(tree)
 
 

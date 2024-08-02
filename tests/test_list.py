@@ -6,6 +6,7 @@ from data_structures import LinkedList, LinkedListError
 def test_empty():
     lst = LinkedList()
     assert lst.is_empty()
+    assert len(lst) == 0
     print(lst)
 
 
@@ -24,3 +25,4 @@ def test_list():
     lst.append(3)
     lst.delete(2)
     print(lst)
+    assert len(lst) == 2
