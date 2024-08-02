@@ -21,3 +21,13 @@ def test_heap():
     heap.insert(3)
     heap.insert(2)
     print(heap)
+
+
+def test_heap_walk():
+    items = [5, 3, 4, 2, 1]
+    heap = Heap.heapify(items)
+    heap_items = []
+    while not heap.is_empty():
+        minimum = heap.extract_min()
+        heap_items.append(minimum)
+    assert heap_items == sorted(items)
