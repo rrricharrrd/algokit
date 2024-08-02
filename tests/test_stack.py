@@ -1,10 +1,15 @@
 from data_structures import Stack
 
 
+def test_empty():
+    stack = Stack()
+    print(stack)
+
+
 def test_stack():
-    s = Stack()
-    s.push(1)
-    s.push(2)
-    s.push(3)
-    s.pop()
-    print(s)
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.pop()
+    print(stack)

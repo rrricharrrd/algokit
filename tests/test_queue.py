@@ -1,11 +1,16 @@
 from data_structures import Queue
 
 
+def test_empty():
+    queue = Queue()
+    print(queue)
+
+
 def test_queue():
 
-    q = Queue()
-    q.add(1)
-    q.add(2)
-    q.add(3)
-    q.remove()
-    print(q)
+    queue = Queue()
+    queue.add(1)
+    queue.add(2)
+    queue.add(3)
+    queue.remove()
+    print(queue)

@@ -1,6 +1,11 @@
 from data_structures import LinkedList
 
 
+def test_empty():
+    lst = LinkedList()
+    print(lst)
+
+
 def test_list():
     lst = LinkedList()
     lst.append(1)
