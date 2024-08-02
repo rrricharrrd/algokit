@@ -1,6 +1,6 @@
 import pytest
 
-from data_structures import Queue, QueueError
+from interviews.data_structures import Queue, QueueError
 
 
 def test_empty():

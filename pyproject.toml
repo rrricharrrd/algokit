@@ -1,7 +1,7 @@
 [project]
-name = "data-structures"
+name = "interviews"
 dynamic = ["version"]
-description = "Interview prep for data structures"
+description = "Interview prep for data structures etc"
 readme = "README.md"
 # requires-python = ">=3.7"  # TODO
 license = {file = "LICENSE.txt"}
@@ -19,11 +19,11 @@ requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["data_structures"]
+packages = ["interviews"]
 package-data = {}
 
 [tool.setuptools_scm]
-version_file = "data_structures/_version.py"
+version_file = "interviews/_version.py"
 
 # Linting
 

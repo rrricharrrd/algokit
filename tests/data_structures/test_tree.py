@@ -1,6 +1,6 @@
 import pytest
 
-from data_structures import Tree, TreeError
+from interviews.data_structures import Tree, TreeError
 
 
 def test_empty():

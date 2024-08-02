@@ -16,10 +16,10 @@ jobs:
         pip install -r requirements-lint.txt
     - name: Run static checks
       run: |
-        black data_structures tests
-        flake8 data_structures tests
-        isort data_structures tests
-        mypy data_structures tests
+        black interviews tests
+        flake8 interviews tests
+        isort interviews tests
+        mypy interviews tests
 
   unit-test:
     runs-on: ubuntu-latest
