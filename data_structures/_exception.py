@@ -1,0 +1,2 @@
+class DataStructureException(ValueError):
+    pass
