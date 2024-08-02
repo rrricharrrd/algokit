@@ -12,6 +12,8 @@ def test_empty():
 def test_errors():
     lst = LinkedList()
     with pytest.raises(LinkedListError):
+        lst.peek()
+    with pytest.raises(LinkedListError):
         lst.delete(1)
 
 

@@ -12,6 +12,8 @@ def test_empty():
 def test_errors():
     queue = Queue()
     with pytest.raises(QueueError):
+        queue.peek()
+    with pytest.raises(QueueError):
         queue.remove()
 
 

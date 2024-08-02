@@ -1,10 +1,18 @@
-from data_structures import Heap
+import pytest
+
+from data_structures import Heap, HeapError
 
 
 def test_empty():
     heap = Heap()
     assert heap.is_empty()
     print(heap)
+
+
+def test_errors():
+    heap = Heap()
+    with pytest.raises(HeapError):
+        heap.peek()
 
 
 def test_heap():

@@ -1,10 +1,18 @@
-from data_structures import Tree
+import pytest
+
+from data_structures import Tree, TreeError
 
 
 def test_empty():
     tree = Tree()
     assert tree.is_empty()
     print(tree)
+
+
+def test_errors():
+    tree = Tree()
+    with pytest.raises(TreeError):
+        tree.peek()
 
 
 def test_tree():

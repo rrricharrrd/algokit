@@ -15,6 +15,25 @@ class Stack:
     def __init__(self):
         self.head = None
 
+    def __str__(self):
+        str = ""
+        n = self.head
+        while n is not None:
+            if str:
+                str += "->"
+            str += f"[{n.data}]"
+            n = n.next
+        return f"Stack<{str}>"
+
+    def is_empty(self):
+        return self.head is None
+
+    def peek(self):
+        if self.is_empty():
+            raise StackError("Empty stack")
+
+        return self.head.data
+
     def pop(self):
         if self.head is None:
             raise StackError("EmptyStack")
@@ -27,19 +46,3 @@ class Stack:
         node = StackNode(item)
         node.next = self.head
         self.head = node
-
-    def peek(self):
-        return self.head.data
-
-    def is_empty(self):
-        return self.head is None
-
-    def __str__(self):
-        str = ""
-        n = self.head
-        while n is not None:
-            if str:
-                str += "->"
-            str += f"[{n.data}]"
-            n = n.next
-        return f"Stack<{str}>"

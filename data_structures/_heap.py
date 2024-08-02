@@ -9,9 +9,21 @@ class Heap:
     def __init__(self):
         self.nodes = []
 
+    def __str__(self):
+        return f"Heap<{self.nodes}>"
+
+    def is_empty(self):
+        return not bool(self.nodes)
+
+    def peek(self):
+        if self.is_empty():
+            raise HeapError("Empty heap")
+
+        return self.nodes[0]
+
     def extract_min(self):
-        pass  # TODO
-        # min = self.nodes[0]
+        pass
+        # result = self.nodes[0]
         # self.nodes[0] = self.nodes[-1]
 
     def insert(self, data):
@@ -26,9 +38,3 @@ class Heap:
                 done = True
             current = parent
             parent = parent // 2
-
-    def is_empty(self):
-        return not bool(self.nodes)
-
-    def __str__(self):
-        return f"Heap<{self.nodes}>"

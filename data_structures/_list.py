@@ -15,6 +15,25 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
+    def __str__(self):
+        str = ""
+        n = self.head
+        while n is not None:
+            if str:
+                str += "->"
+            str += f"[{n.data}]"
+            n = n.next
+        return f"LinkedList<{str}>"
+
+    def is_empty(self):
+        return self.head is None
+
+    def peek(self):
+        if self.is_empty():
+            raise LinkedListError("Empty list")
+
+        return self.head.data
+
     def append(self, data):
         node = ListNode(data)
         n = self.head
@@ -42,16 +61,3 @@ class LinkedList:
             prev = n
         prev.next = n.next
         return
-
-    def is_empty(self):
-        return self.head is None
-
-    def __str__(self):
-        str = ""
-        n = self.head
-        while n is not None:
-            if str:
-                str += "->"
-            str += f"[{n.data}]"
-            n = n.next
-        return f"LinkedList<{str}>"

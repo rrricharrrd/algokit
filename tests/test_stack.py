@@ -12,6 +12,8 @@ def test_empty():
 def test_errors():
     stack = Stack()
     with pytest.raises(StackError):
+        stack.peek()
+    with pytest.raises(StackError):
         stack.pop()
 
 
