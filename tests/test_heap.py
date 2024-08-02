@@ -3,6 +3,7 @@ from data_structures import Heap
 
 def test_empty():
     heap = Heap()
+    assert heap.is_empty()
     print(heap)
 
 

@@ -3,6 +3,7 @@ from data_structures import Queue
 
 def test_empty():
     queue = Queue()
+    assert queue.is_empty()
     print(queue)
 
 

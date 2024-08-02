@@ -26,7 +26,7 @@ class Queue:
         return self.head
 
     def is_empty(self):
-        return self.head is not None
+        return self.head is None
 
     def __str__(self):
         str = ""

@@ -33,6 +33,9 @@ class LinkedList:
         prev.next = n.next
         return
 
+    def is_empty(self):
+        return self.head is None
+
     def __str__(self):
         str = ""
         n = self.head

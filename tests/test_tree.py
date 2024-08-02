@@ -3,6 +3,7 @@ from data_structures import Tree
 
 def test_empty():
     tree = Tree()
+    assert tree.is_empty()
     print(tree)
 
 

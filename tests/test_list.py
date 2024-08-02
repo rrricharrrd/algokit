@@ -3,6 +3,7 @@ from data_structures import LinkedList
 
 def test_empty():
     lst = LinkedList()
+    assert lst.is_empty()
     print(lst)
 
 

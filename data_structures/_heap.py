@@ -20,5 +20,8 @@ class Heap:
             current = parent
             parent = parent // 2
 
+    def is_empty(self):
+        return not bool(self.nodes)
+
     def __str__(self):
         return f"Heap<{self.nodes}>"

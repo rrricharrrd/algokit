@@ -3,6 +3,7 @@ from data_structures import Stack
 
 def test_empty():
     stack = Stack()
+    assert stack.is_empty()
     print(stack)
 
 

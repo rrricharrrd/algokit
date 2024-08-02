@@ -15,5 +15,8 @@ class Tree:
     def find(self, data):
         pass
 
+    def is_empty(self):
+        return self.root is None
+
     def __str__(self):
         return "Tree<TODO>"
