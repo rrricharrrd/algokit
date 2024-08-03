@@ -10,6 +10,9 @@ class QueueNode:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f"QueueNode<{self.data}>"
+
 
 class Queue:
     def __init__(self):
@@ -41,7 +44,7 @@ class Queue:
         if self.is_empty():
             raise QueueError("Empty queue")
 
-        return self.head
+        return self.head.data
 
     def add(self, item):
         node = QueueNode(item)

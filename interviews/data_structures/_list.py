@@ -11,7 +11,7 @@ class ListNode:
         self.next = None
 
     def __str__(self):
-        return f"Node<{self.data}>"
+        return f"ListNode<{self.data}>"
 
 
 class LinkedList:
