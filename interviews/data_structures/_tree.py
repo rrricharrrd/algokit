@@ -1,3 +1,5 @@
+"""TODO binary tree or binary search tree or...???"""
+
 from ._exception import DataStructureException
 
 
