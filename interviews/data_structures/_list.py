@@ -10,6 +10,9 @@ class ListNode:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f"Node<{self.data}>"
+
 
 class LinkedList:
     def __init__(self):
@@ -17,21 +20,20 @@ class LinkedList:
 
     def __str__(self):
         s = ""
-        n = self.head
-        while n is not None:
+        for node in self:
             if s:
                 s += "->"
-            s += f"[{n.data}]"
-            n = n.next
+            s += f"[{node.data}]"
         return f"LinkedList<{s}>"
 
     def __len__(self):
-        count = 0
+        return sum(1 for _ in self)
+
+    def __iter__(self):
         node = self.head
         while node is not None:
-            count += 1
+            yield node
             node = node.next
-        return count
 
     def is_empty(self):
         return self.head is None
@@ -48,30 +50,28 @@ class LinkedList:
         if n is None:
             self.head = node
         else:
-            while n.next is not None:
-                n = n.next
+            for n in self:
+                pass
             n.next = node
 
     def delete(self, data):
         if self.head is None:
             raise LinkedListError("Empty list")
 
-        n = self.head
-        if n.data == data:
-            self.head = n.next
+        if self.head.data == data:
+            self.head = self.head.next
             return data
 
         found = False
         prev = None
-        while n is not None:
-            if n.data == data:
+        for node in self:
+            if node.data == data:
                 found = True
                 break
-            prev = n
-            n = n.next
+            prev = node
 
         if found:
-            prev.next = n.next
+            prev.next = node.next
         else:
-            raise LinkedListError("Element could not be found")  # TODO
+            raise LinkedListError(f"Element {data} could not be found")
         return data
