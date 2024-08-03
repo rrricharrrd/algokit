@@ -8,7 +8,7 @@ class GraphError(DataStructureException):
 class GraphNode:
     def __init__(self, data=None):
         self.data = data
-        self.adjacency = []
+        self.adjacency = {}
 
     def __str__(self):
         return f"GraphNode<{self.data}: [{','.join(str(n.data) for n in self.adjacency)}]"
@@ -37,14 +37,14 @@ class Graph:
         self.nodes.add(node)
         return node
 
-    def add_directed_edge(self, node1, node2):
+    def add_directed_edge(self, node1, node2, weight=1):
         if node1 not in self.nodes:
             self.nodes.add(node1)
         if node2 not in self.nodes:
             self.nodes.add(node2)
 
-        node1.adjacency.append(node2)
+        node1.adjacency[node2] = weight
 
-    def add_edge(self, node1, node2):
-        self.add_directed_edge(node1, node2)
-        self.add_directed_edge(node2, node1)
+    def add_edge(self, node1, node2, weight=1):
+        self.add_directed_edge(node1, node2, weight=weight)
+        self.add_directed_edge(node2, node1, weight=weight)

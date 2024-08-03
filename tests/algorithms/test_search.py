@@ -3,6 +3,12 @@ from interviews.data_structures import Graph
 
 
 def _make_graph():
+    r"""
+    [0] -> [1] <- [2]
+     |  \   |  \   ^
+     V   >  V    > |
+    [5]    [4] <- [3]
+    """
     graph = Graph()
     n0 = graph.add_node(0)
     n1 = graph.add_node(1)
