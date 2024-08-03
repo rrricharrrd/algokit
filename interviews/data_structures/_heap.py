@@ -91,11 +91,11 @@ class Heap:
             current_ix = parent_ix
             parent_ix = _parent(parent_ix)
 
-    def check(self):  # For testing...
-        for ix in range(len(self.items)):
-            left_ix = _left(ix)
-            right_ix = _right(ix)
-            if left_ix < len(self.items):
-                assert self.items[ix] <= self.items[left_ix]
-            if right_ix < len(self.items):
-                assert self.items[ix] <= self.items[right_ix]
+    # def check(self):  # For testing...
+    #     for ix in range(len(self.items)):
+    #         left_ix = _left(ix)
+    #         right_ix = _right(ix)
+    #         if left_ix < len(self.items):
+    #             assert self.items[ix] <= self.items[left_ix]
+    #         if right_ix < len(self.items):
+    #             assert self.items[ix] <= self.items[right_ix]

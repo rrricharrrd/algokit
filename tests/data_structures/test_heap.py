@@ -9,23 +9,26 @@ def test_empty():
     assert len(heap) == 0
     print(heap)
 
-
-def test_errors():
-    heap = Heap()
     with pytest.raises(HeapError):
         heap.peek()
 
 
-def test_heap():
-    heap = Heap()
-    heap.insert(1)
-    heap.insert(3)
-    heap.insert(2)
-    print(heap)
+def test_heapify():
+    heap = Heap.heapify([2, 3, 1])
     assert len(heap) == 3
+    assert heap.peek() == 1
 
 
-def test_heap_walk():
+def test_insert():
+    heap = Heap()
+    heap.insert(2)
+    heap.insert(3)
+    heap.insert(1)
+    assert len(heap) == 3
+    assert heap.peek() == 1
+
+
+def test_extract_min():
     items = [5, 3, 4, 2, 1]
     heap = Heap.heapify(items)
     heap_items = []
@@ -33,3 +36,16 @@ def test_heap_walk():
         minimum = heap.extract_min()
         heap_items.append(minimum)
     assert heap_items == sorted(items)
+
+    with pytest.raises(HeapError):
+        heap.extract_min()
+
+
+def test_str():
+    heap = Heap()
+    print(heap)
+
+    heap.insert(3)
+    heap.insert(2)
+    heap.insert(1)
+    print(heap)
