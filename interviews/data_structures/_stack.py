@@ -10,6 +10,9 @@ class StackNode:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f"StackeNode<{self.data}>"
+
 
 class Stack:
     def __init__(self):
