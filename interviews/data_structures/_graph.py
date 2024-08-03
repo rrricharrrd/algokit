@@ -10,6 +10,9 @@ class GraphNode:
         self.data = data
         self.adjacency = []
 
+    def __str__(self):
+        return f"GraphNode<{self.data}: [{','.join(str(n.data) for n in self.adjacency)}]"
+
 
 class Graph:
     def __init__(self):
@@ -20,7 +23,7 @@ class Graph:
         for n in self.nodes:
             if s:
                 s += "; "
-            s += f"{n.data} -> [{','.join(str(n2.data) for n2 in n.adjacency)}]"
+            s += str(n)
         return f"Graph<{s}>"
 
     def __len__(self):
