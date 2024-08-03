@@ -1,8 +1,13 @@
 from .search import bfs, dfs
-from .sorting import heapsort
+from .sort import bubble_sort, heap_sort, merge_sort, quick_sort
 
 __all__ = (
+    # Search
     "bfs",
     "dfs",
-    "heapsort",
+    # Sort
+    "bubble_sort",
+    "heap_sort",
+    "merge_sort",
+    "quick_sort",
 )
