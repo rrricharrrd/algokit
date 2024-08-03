@@ -20,6 +20,8 @@ class HeapError(DataStructureException):
 
 
 class Heap:
+    """*Min* heap."""
+
     def __init__(self):
         self.items = []
 
@@ -124,11 +126,13 @@ class PriorityQueueEntry:
 
 
 class PriorityQueue:
+    """*Min*-priority queue."""
+
     def __init__(self):
         self.heap = Heap()
 
     def enqueue(self, data, priority=1):
-        entry = PriorityQueueEntry(data=data, priority=-priority)  # NB: parity flipping
+        entry = PriorityQueueEntry(data=data, priority=priority)
         self.heap.insert(entry)
 
     def dequeue(self):

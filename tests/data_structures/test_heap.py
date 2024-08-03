@@ -53,8 +53,8 @@ def test_str():
 
 def test_priority_queue():
     queue = PriorityQueue()
-    queue.enqueue(1, priority=1)
-    queue.enqueue(2, priority=3)
+    queue.enqueue(1, priority=3)
+    queue.enqueue(2, priority=1)
     queue.enqueue(3, priority=2)
     queue.enqueue(4, priority=2)
 
