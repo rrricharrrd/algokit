@@ -1,6 +1,6 @@
 from ._exception import DataStructureException
 from ._graph import Graph, GraphError, GraphNode
-from ._heap import Heap, HeapError
+from ._heap import Heap, HeapError, PriorityQueue
 from ._list import LinkedList, LinkedListError
 from ._queue import Queue, QueueError
 from ._stack import Stack, StackError
@@ -16,6 +16,7 @@ __all__ = (
     "HeapError",
     "LinkedList",
     "LinkedListError",
+    "PriorityQueue",
     "Queue",
     "QueueError",
     "Stack",

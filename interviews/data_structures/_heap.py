@@ -1,3 +1,5 @@
+import functools
+
 from ._exception import DataStructureException
 
 
@@ -99,3 +101,36 @@ class Heap:
     #             assert self.items[ix] <= self.items[left_ix]
     #         if right_ix < len(self.items):
     #             assert self.items[ix] <= self.items[right_ix]
+
+
+@functools.total_ordering
+class PriorityQueueEntry:
+    def __init__(self, data=None, priority=1):
+        self.data = data
+        self.priority = priority
+
+    def __eq__(self, other):
+        if not isinstance(other, PriorityQueueEntry):
+            raise ValueError(f"Cannot compare to {other} of type {type(other)}")
+        return self.priority == other.priority and self.data == other.data
+
+    def __lt__(self, other):
+        if not isinstance(other, PriorityQueueEntry):
+            raise ValueError(f"Cannot compare to {other} of type {type(other)}")
+        if self.priority == other.priority:
+            return self.data < other.data  # doesn't really matter
+        else:
+            return self.priority < other.priority
+
+
+class PriorityQueue:
+    def __init__(self):
+        self.heap = Heap()
+
+    def enqueue(self, data, priority=1):
+        entry = PriorityQueueEntry(data=data, priority=-priority)  # NB: parity flipping
+        self.heap.insert(entry)
+
+    def dequeue(self):
+        minimum = self.heap.extract_min()
+        return minimum.data
