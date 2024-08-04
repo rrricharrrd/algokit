@@ -1,0 +1,2 @@
+[run]
+omit = interviews/_version.py

@@ -1,7 +1,6 @@
 # TODO list
 
 - doubly-linked list
-- trie
+- union-find
 - more graph algorithms e.g. djikstra, kruskal
-- more sorting algorithms e.g. quicksort
 - etc...
