@@ -1,6 +1,6 @@
 import pytest
 
-from interviews.data_structures import Heap, HeapError, PriorityQueue
+from interviews.data_structures import Heap, HeapError
 
 
 def test_empty():
@@ -49,19 +49,3 @@ def test_str():
     heap.insert(2)
     heap.insert(1)
     print(heap)
-
-
-def test_priority_queue():
-    queue = PriorityQueue()
-    queue.enqueue(1, priority=3)
-    queue.enqueue(2, priority=1)
-    queue.enqueue(3, priority=2)
-    queue.enqueue(4, priority=2)
-
-    item = queue.dequeue()
-    assert item == 2
-    item1 = queue.dequeue()
-    item2 = queue.dequeue()
-    assert {item1, item2} == {3, 4}
-    item = queue.dequeue()
-    assert item == 1

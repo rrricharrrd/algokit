@@ -1,7 +1,8 @@
 from ._exception import DataStructureException
 from ._graph import Graph, GraphError, GraphNode
-from ._heap import Heap, HeapError, PriorityQueue
+from ._heap import Heap, HeapError
 from ._list import LinkedList, LinkedListError
+from ._priority_queue import PriorityQueue
 from ._queue import Queue, QueueError
 from ._stack import Stack, StackError
 from ._tree import Tree, TreeError
