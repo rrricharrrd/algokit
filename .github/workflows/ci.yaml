@@ -16,10 +16,10 @@ jobs:
         pip install -r requirements-lint.txt
     - name: Run static checks
       run: |
-        black interviews tests
-        flake8 interviews tests
-        isort interviews tests
-        mypy interviews tests
+        black algokit tests
+        flake8 algokit tests
+        isort algokit tests
+        mypy algokit tests
 
   unit-test:
     runs-on: ubuntu-latest
