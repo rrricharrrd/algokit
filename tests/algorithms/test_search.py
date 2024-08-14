@@ -1,5 +1,5 @@
-from interviews.algorithms.search import bfs, dfs
-from interviews.data_structures import Graph
+from algokit.algorithms.search import bfs, dfs
+from algokit.data_structures import Graph
 
 
 def _make_graph():

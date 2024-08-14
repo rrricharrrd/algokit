@@ -1,6 +1,6 @@
 import pytest
 
-from interviews.data_structures import Stack, StackError
+from algokit.data_structures import Stack, StackError
 
 
 def test_empty():

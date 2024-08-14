@@ -1,2 +1,2 @@
 [run]
-omit = interviews/_version.py
+omit = algokit/_version.py

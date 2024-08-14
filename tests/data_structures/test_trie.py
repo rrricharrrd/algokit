@@ -1,6 +1,6 @@
 import pytest
 
-from interviews.data_structures import Trie, TrieError
+from algokit.data_structures import Trie, TrieError
 
 
 def test_empty():

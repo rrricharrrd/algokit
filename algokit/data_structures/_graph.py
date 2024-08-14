@@ -11,7 +11,7 @@ class GraphNode:
         self.adjacency = {}
 
     def __str__(self):
-        return f"GraphNode<{self.data}: [{','.join(str(n.data) for n in self.adjacency)}]"
+        return f"GraphNode<{self.data}>: [{','.join(str(n.data) for n in self.adjacency)}]"
 
 
 class Graph:

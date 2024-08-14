@@ -1,4 +1,4 @@
-from interviews.data_structures import Graph, GraphNode
+from algokit.data_structures import Graph, GraphNode
 
 
 def test_empty():

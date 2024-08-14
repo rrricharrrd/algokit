@@ -1,4 +1,4 @@
-from interviews.data_structures import Heap
+from algokit.data_structures import Heap
 
 
 def bubble_sort(items):

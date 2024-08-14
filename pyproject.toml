@@ -1,7 +1,7 @@
 [project]
-name = "interviews"
+name = "algokit"
 dynamic = ["version"]
-description = "Interview prep for data structures and algorithms"
+description = "Reference implementations of some data structures and algorithms"
 readme = "README.md"
 # requires-python = ">=3.7"  # TODO
 license = {file = "LICENSE.txt"}
@@ -15,11 +15,11 @@ requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["interviews"]
+packages = ["algokit"]
 package-data = {}
 
 [tool.setuptools_scm]
-version_file = "interviews/_version.py"
+version_file = "algokit/_version.py"
 
 # Linting
 

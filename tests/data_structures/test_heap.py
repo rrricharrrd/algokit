@@ -1,6 +1,6 @@
 import pytest
 
-from interviews.data_structures import Heap, HeapError
+from algokit.data_structures import Heap, HeapError
 
 
 def test_empty():

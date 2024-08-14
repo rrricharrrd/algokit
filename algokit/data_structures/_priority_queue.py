@@ -1,6 +1,6 @@
 import functools
 
-from interviews.data_structures._heap import Heap
+from algokit.data_structures._heap import Heap
 
 
 @functools.total_ordering
@@ -22,6 +22,9 @@ class PriorityQueueEntry:
         else:
             return self.priority < other.priority
 
+    def __hash__(self):
+        return hash((self.priority, self.data))
+
 
 class PriorityQueue:
     """*Min*-priority queue."""
@@ -37,7 +40,7 @@ class PriorityQueue:
 
     def peek(self):
         head = self.heap.peek()
-        return head.data
+        return head
 
     def enqueue(self, data, priority=1):
         entry = PriorityQueueEntry(data=data, priority=priority)
@@ -46,7 +49,7 @@ class PriorityQueue:
 
     def dequeue(self):
         minimum = self.heap.extract_min()
-        return minimum.data
+        return minimum
 
     def change_priority(self, entry, priority=1):
         index = self.heap.items.index(entry)

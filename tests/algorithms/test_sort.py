@@ -2,7 +2,7 @@ import random
 
 import pytest
 
-from interviews.algorithms import bubble_sort, heap_sort, merge_sort, quick_sort
+from algokit.algorithms import bubble_sort, heap_sort, merge_sort, quick_sort
 
 RNG = random.Random(123)
 ARRAY_SIZE = 512

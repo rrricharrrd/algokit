@@ -1,6 +1,6 @@
 import pytest
 
-from interviews.data_structures import LinkedList, LinkedListError
+from algokit.data_structures import LinkedList, LinkedListError
 
 
 def test_empty():

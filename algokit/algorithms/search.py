@@ -1,8 +1,8 @@
 import logging
 
-from interviews.data_structures import Queue
+from algokit.data_structures import Queue
 
-logging.getLogger().setLevel(logging.DEBUG)
+logging.getLogger().setLevel(logging.INFO)
 
 
 def dfs(start, item, visited=None):
