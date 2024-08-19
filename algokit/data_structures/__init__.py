@@ -7,6 +7,7 @@ from ._queue import Queue, QueueError
 from ._stack import Stack, StackError
 from ._tree import Tree, TreeError
 from ._trie import Trie, TrieError
+from ._union_find import UnionFind, UnionFindError
 
 __all__ = (
     "DataStructureException",
@@ -26,4 +27,6 @@ __all__ = (
     "TreeError",
     "Trie",
     "TrieError",
+    "UnionFind",
+    "UnionFindError",
 )
