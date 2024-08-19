@@ -48,3 +48,11 @@ class Graph:
     def add_edge(self, node1, node2, weight=1):
         self.add_directed_edge(node1, node2, weight=weight)
         self.add_directed_edge(node2, node1, weight=weight)
+
+    def iternodes(self):
+        yield from self.nodes
+
+    def iteredges(self):
+        for node1 in self.nodes:
+            for node2, weight in node1.adjacency.items():
+                yield (node1, node2, weight)

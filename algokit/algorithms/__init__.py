@@ -1,5 +1,6 @@
 from .search import bfs, dfs
 from .sort import bubble_sort, heap_sort, merge_sort, quick_sort
+from .span import kruskal
 
 __all__ = (
     # Search
@@ -10,4 +11,6 @@ __all__ = (
     "heap_sort",
     "merge_sort",
     "quick_sort",
+    # Span
+    "kruskal",
 )
