@@ -47,12 +47,11 @@ class Heap:
 
     def _sift_up(self, index):
         parent_ix = _parent(index)
-        done = False
-        while index != 0 and not done:
-            if self.items[parent_ix] > self.items[index]:
-                self.items[parent_ix], self.items[index] = self.items[index], self.items[parent_ix]
-            else:
-                done = True
+        while index != 0:
+            if self.items[parent_ix] <= self.items[index]:
+                break
+
+            self.items[parent_ix], self.items[index] = self.items[index], self.items[parent_ix]
             index = parent_ix
             parent_ix = _parent(parent_ix)
 
