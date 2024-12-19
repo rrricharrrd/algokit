@@ -1,5 +1,6 @@
 import hashlib
-from typing import Any, Callable
+import random
+from typing import Any, Callable, Optional
 
 import numpy as np
 
@@ -14,8 +15,9 @@ def _make_hash_function(salt: Any) -> Callable:
 
 
 class BloomFilter:
-    def __init__(self, n_filters, filter_size):
-        self._hash_functions = [_make_hash_function(i) for i in range(n_filters)]
+    def __init__(self, n_filters: int, filter_size: int, rng: Optional[random.Random] = None):
+        self._rng = rng or random.Random(123)
+        self._hash_functions = [_make_hash_function(i) for i in self._rng.sample(range(0, 10 * n_filters), n_filters)]
         self._filter_size = filter_size
         self._buckets = np.zeros((n_filters, filter_size))
 
