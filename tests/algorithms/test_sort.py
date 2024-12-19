@@ -21,7 +21,7 @@ def test_sort_sorted(sort_fn):
     items = [random.randint(0, 2 * ARRAY_SIZE) for _ in range(ARRAY_SIZE)]
     items = sorted(items)
     result = sort_fn(items)
-    assert result == sorted(items)
+    assert result == items
 
 
 @pytest.mark.parametrize("sort_fn", SORT_FNS)
