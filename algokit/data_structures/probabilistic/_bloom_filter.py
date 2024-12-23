@@ -3,7 +3,7 @@ import random
 from typing import Any, Callable, Optional
 
 
-def _make_hash_function(salt: Any) -> Callable:
+def _make_hash_function(salt: Any) -> Callable[[Any], int]:
     def hash_function(x: Any) -> int:
         hasher = hashlib.sha256()
         hasher.update(str(salt).encode() + str(x).encode())
@@ -15,7 +15,9 @@ def _make_hash_function(salt: Any) -> Callable:
 class BloomFilter:
     def __init__(self, n_filters: int, filter_size: int, rng: Optional[random.Random] = None):
         self._rng = rng or random.Random(123)
-        self._hash_functions = [_make_hash_function(i) for i in self._rng.sample(range(0, 10 * n_filters), n_filters)]
+        self._hash_functions = [
+            _make_hash_function(salt=i) for i in self._rng.sample(range(0, 10 * n_filters), n_filters)
+        ]
         self._filter_size = filter_size
         self._buckets = [[0 for _ in range(filter_size)] for _ in range(n_filters)]
 
